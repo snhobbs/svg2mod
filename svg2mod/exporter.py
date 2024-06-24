@@ -336,7 +336,7 @@ class Svg2ModExport(ABC):
                         elif len(inlinable) > 0:
                             points = inlinable[ 0 ].points
 
-                        logger.info( "  Writing {} with {} points".format(item.__class__.__name__, len( points ) ))
+                        logger.debug( "  Writing {} with {} points".format(item.__class__.__name__, len( points ) ))
 
                         self._write_polygon(
                             points, layer, fill, stroke, stroke_width
@@ -348,7 +348,7 @@ class Svg2ModExport(ABC):
 
                 if len ( segments ) == 1:
 
-                    logger.info( "  Writing {} with {} points".format(item.__class__.__name__, len( points ) ))
+                    logger.debug( "  Writing {} with {} points".format(item.__class__.__name__, len( points ) ))
 
                     self._write_polygon(
                         points, layer, fill, stroke, stroke_width
@@ -502,7 +502,7 @@ class Svg2ModExport(ABC):
         self._calculate_translation()
 
         if self.file_name:
-            unfiltered_logger.info( "Writing module file: {}".format( self.file_name ) )
+            unfiltered_logger.debug( "Writing module file: {}".format( self.file_name ) )
             self.output_file = open( self.file_name, 'w' )
         else:
             self.output_file = io.StringIO()
