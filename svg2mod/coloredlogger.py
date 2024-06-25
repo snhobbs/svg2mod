@@ -32,18 +32,6 @@ _sh = logging.StreamHandler(sys.stdout)
 logger.addHandler(_sh)
 unfiltered_logger.addHandler(_sh)
 
-logger.setLevel(logging.DEBUG)
-
-# Add a second logger that will bypass the log level and output anyway
-# It is a good practice to send only messages level INFO via this logger
-unfiltered_logger.setLevel(logging.INFO)
-
-# This can be used sparingly as follows:
-#---------
-# unfiltered_logger.info("Message Here")
-#---------
-
-
 #----------------------------------------------------------------------------
 
 class Formatter(logging.Formatter):
