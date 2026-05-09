@@ -1,2 +1,2 @@
 fontTools >= 4.0.1
-re
+#re
